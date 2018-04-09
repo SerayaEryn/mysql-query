@@ -1,7 +1,6 @@
 # mysql-query
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/SerayaEryn/mysql-query.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/SerayaEryn/mysql-query.svg?branch=master)](https://travis-ci.org/SerayaEryn/mysql-query)
 [![Coverage Status](https://coveralls.io/repos/github/SerayaEryn/mysql-query/badge.svg?branch=master)](https://coveralls.io/github/SerayaEryn/mysql-query?branch=master)
 [![NPM version](https://img.shields.io/npm/v/@serayaeryn/mysql-query.svg?style=flat)](https://www.npmjs.com/package/@serayaeryn/mysql-query)
