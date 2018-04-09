@@ -1,0 +1,37 @@
+{
+  "name": "@serayaeryn/mysql-query",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "unit": "tap test/*.test.js",
+    "test": "npm run lint && npm run unit",
+    "lint": "./node_modules/eslint/bin/eslint.js index.js test/*",
+    "coveralls": "npm run unit --  --cov",
+    "coverage-report": "npm run coveralls && tap --coverage-report=lcov",
+    "benchmark": "node benchmark/benchmark.js"
+  },
+  "keywords": [
+    "mysql",
+    "query",
+    "escape"
+  ],
+  "author": "Denis Fäcke",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerayaEryn/mysql-query.git"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "dependencies": {
+    "sqlstring": "^2.3.1"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.1",
+    "tap": "^11.1.3"
+  }
+}
