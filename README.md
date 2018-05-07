@@ -14,7 +14,8 @@ npm install @serayaeryn/mysql-query
 ```
 
 ## Usage
-Define your query string with placeholders starting with `?` (for example `?name`) and pass it to the function exported by the `@serayaeryn/mysql-query` module. It will create a function, that accepts the values for the previously defined placeholders and returns the query the escaped values.
+Define your query string with placeholders starting with a question mark `?` (for example `?name`) and pass it to the function exported by the `@serayaeryn/mysql-query` module. It will create a function, that accepts the values for the previously defined placeholders and returns the query the escaped values. <br>
+**Note**: The values need to be passed in the same order as the placeholders are defined in the query.
 ```js
 // on startup
 const mysqlQuery = require('@serayaeryn/mysql-query');
@@ -29,16 +30,14 @@ connection.query(escapedQuery);
 The benchmark compares to the `format(sql, values)` function of the [sqlstring](https://www.npmjs.com/package/sqlstring) module.
 
 ### Usage
-```
-npm run benchmark
-```
+Clone the repository and run `npm run benchmark`.
 ### Results
 
 ```bash
 $ npm run benchmark
 
-@serayaeryn/mysql-query x 5,428,143 ops/sec ±0.49% (86 runs sampled)
-sqlstring - format x 1,968,558 ops/sec ±0.81% (91 runs sampled)
+@serayaeryn/mysql-query x 5,618,794 ops/sec ±0.40% (89 runs sampled)
+sqlstring - format x 1,981,991 ops/sec ±0.23% (92 runs sampled)
 Fastest is @serayaeryn/mysql-query
 ```
 
