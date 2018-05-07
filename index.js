@@ -2,20 +2,21 @@
 
 const sqlstring = require('sqlstring');
 
+const MATCH_PLACEHOLDERS_REGEXP = /\?(\w+)/g;
+
 function build(queryString) {
-  var dependencyNames = []; 
+  var parameters = []; 
   var functionString = queryString;
-  var r = /(\?\w+)/g
+  MATCH_PLACEHOLDERS_REGEXP.lastIndex = 0;
   var match;
-  while ((match = r.exec(queryString)) != null) {
-    var parameter = match[1].substring(1);
-    dependencyNames.push(parameter);
-    functionString = functionString.replace(match[1], '${this.sqlstring.escape(' + parameter + ')}');
+  while ((match = MATCH_PLACEHOLDERS_REGEXP.exec(queryString))) {
+    var parameter = match[1];
+    parameters.push(parameter);
+    functionString = functionString.replace('?' + parameter, '${sqlstring.escape(' + parameter + ')}');
   }
   
-  functionString = `return \`${functionString}\``;
-  dependencyNames.push(functionString);
-  return Function.apply(null, dependencyNames).bind({sqlstring});
+  functionString = `return function(${parameters.join(', ')}) { return \`${functionString}\`}`;
+  return Function.apply(null, ['sqlstring', functionString]).apply(null, [sqlstring]);
 }
 
 module.exports = build;
