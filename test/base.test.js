@@ -1,7 +1,6 @@
 'use strict'
 
-const t = require('tap')
-const test = t.test
+const test = require('ava')
 const mysqlQuery = require('..')
 
 test('Should escape parameter', (t) => {
@@ -11,7 +10,7 @@ test('Should escape parameter', (t) => {
   const emailQuery = mysqlQuery(queryString)
   const escapedQuery = emailQuery('1')
 
-  t.strictEquals(escapedQuery, 'SELECT email FROM users WHERE id=\'1\';')
+  t.is(escapedQuery, 'SELECT email FROM users WHERE id=\'1\';')
 })
 
 test('Should escape parameter in camelcase', (t) => {
@@ -21,7 +20,7 @@ test('Should escape parameter in camelcase', (t) => {
   const emailQuery = mysqlQuery(queryString)
   const escapedQuery = emailQuery('1')
 
-  t.strictEquals(escapedQuery, 'SELECT email FROM users WHERE id=\'1\';')
+  t.is(escapedQuery, 'SELECT email FROM users WHERE id=\'1\';')
 })
 
 test('Should escape multiple parameter', (t) => {
@@ -31,5 +30,5 @@ test('Should escape multiple parameter', (t) => {
   const emailQuery = mysqlQuery(queryString)
   const escapedQuery = emailQuery('1', 'test', 42)
 
-  t.strictEquals(escapedQuery, 'SELECT email FROM users WHERE id=\'1\' AND name=\'test\' AND age=42;')
+  t.is(escapedQuery, 'SELECT email FROM users WHERE id=\'1\' AND name=\'test\' AND age=42;')
 })
