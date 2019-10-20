@@ -1,9 +1,9 @@
 # mysql-query
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/SerayaEryn/mysql-query.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/SerayaEryn/mysql-query.svg?branch=master)](https://travis-ci.org/SerayaEryn/mysql-query)
+![Build Status](https://github.com/SerayaEryn/mysql-query/workflows/ci/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/SerayaEryn/mysql-query/badge.svg?branch=master)](https://coveralls.io/github/SerayaEryn/mysql-query?branch=master)
 [![NPM version](https://img.shields.io/npm/v/@serayaeryn/mysql-query.svg?style=flat)](https://www.npmjs.com/package/@serayaeryn/mysql-query)
+[![Greenkeeper badge](https://badges.greenkeeper.io/SerayaEryn/mysql-query.svg)](https://greenkeeper.io/)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 This module provides a performant way to escape your mysql queries to protect from SQL injection.
