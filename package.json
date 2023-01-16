@@ -30,7 +30,7 @@
     "sqlstring": "^2.3.1"
   },
   "devDependencies": {
-    "ava": "^3.0.0",
+    "ava": "^5.1.1",
     "benchmark": "^2.1.4",
     "nyc": "^15.0.0",
     "standard": "^16.0.1"
